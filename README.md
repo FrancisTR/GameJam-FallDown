@@ -6,3 +6,4 @@ TBD
 # Team Members
 - Francis Tran
 - Nicholas B (FrostyNick)
+- Sparsh Choudhary
