@@ -32,9 +32,21 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
+
         Flip();
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Goo"))
+        {
+            speed = 2f;
+        }
+        else
+        {
+            speed = 8f;
+        }
+    }
     private void FixedUpdate(){
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
