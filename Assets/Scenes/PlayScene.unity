@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 1386167017}
   - component: {fileID: 1386167016}
   - component: {fileID: 1386167015}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1981128405}
   - component: {fileID: 1981128404}
   - component: {fileID: 1981128403}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   groundCheck: {fileID: 2136786556}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!61 &1981128404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136786556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground Check
   m_TagString: Player
   m_Icon: {fileID: 0}
