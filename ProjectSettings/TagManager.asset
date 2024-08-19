@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BossRoom
   layers:
   - Default
   - TransparentFX
@@ -11,12 +12,12 @@ TagManager:
   - 
   - Water
   - UI
+  - 
   - Ground
-  - Enemies
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Background
+  - Enemy
+  - FallingPlatform
   - 
   - 
   - 
@@ -40,10 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: EnemySlime
-    uniqueID: 1235649707
-    locked: 0
-  - name: Platform
-    uniqueID: 3677971483
     locked: 0

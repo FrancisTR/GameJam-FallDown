@@ -1,0 +1,677 @@
+fileFormatVersion: 2
+guid: d5e91460d7f44f848afaea63c93b8f63
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 31
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 450
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85daa20f1b968d942b21ea90acae51c5
+      internalID: -295147247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 450
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a999b5013bf1ec0408ab0423f24489a8
+      internalID: -1316359258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 450
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7196a1fea00695a4e8230a2eba58e7bf
+      internalID: -2069702420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 450
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322c1087088948b449245a152749044d
+      internalID: -1683732175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 450
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5817e759c4ba04c86aaeec44e3524b
+      internalID: 1010319189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 451
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e396930a1920ef24a82e7f34e9d74b4e
+      internalID: -1902090925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_6
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 451
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58a480dafb3a1e4396b32177f94304d
+      internalID: -1511282541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383d197ef706965469bb68382c60e03d
+      internalID: 1403900116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce97a06cf3ca55b4d8dcf135290f7415
+      internalID: 411164528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_9
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105ec92e1626c404c9aec1e23adb3e30
+      internalID: -2013654461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd65fa14ccb567c42b66c877ca5091de
+      internalID: 1661320705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_11
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff54d1409b79d954d98cfd3979860866
+      internalID: -1590722236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 417
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa350ee858b48b4bbdcb6776c6e63b5
+      internalID: 1352217538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 417
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6912d85638ae94497bcc2ccfb166b1
+      internalID: -1540467107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_14
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 417
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4627e23f2765d048bec691b6edf881f
+      internalID: 1430585883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_15
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 417
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c820b499b988140a116b139ca18667
+      internalID: -1266675731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 382
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8600047e1ce4d7743a1ab6488bdcebbc
+      internalID: -977869722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_17
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 382
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2266707b1490449b91939abb4ae469
+      internalID: -1035675864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_18
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 382
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949ad35d65c75aa479a23632f1ee34d6
+      internalID: 442788815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 383
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c119f4a9d4beba40b6812a8e7b59017
+      internalID: 318527830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_20
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 383
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccabff5aa931c4143860332e9302fcf9
+      internalID: 1140046992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_21
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 383
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484d96ed6f4af04409e019554eaea7e4
+      internalID: 213944230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_22
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 383
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e696b14dad35a0448480be99d7682a8
+      internalID: -1618019020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 349
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705f9ed109fd3a249b76ef4d682b8b77
+      internalID: -918564104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile Map (updates 8.14.24) - 32x32 pixel_24
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 349
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7fed87b022ef648aefe287cab17ed2
+      internalID: 1219562131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tile Map (updates 8.14.24) - 32x32 pixel_0: -295147247
+      Tile Map (updates 8.14.24) - 32x32 pixel_1: -1316359258
+      Tile Map (updates 8.14.24) - 32x32 pixel_10: 1661320705
+      Tile Map (updates 8.14.24) - 32x32 pixel_11: -1590722236
+      Tile Map (updates 8.14.24) - 32x32 pixel_12: 1352217538
+      Tile Map (updates 8.14.24) - 32x32 pixel_13: -1540467107
+      Tile Map (updates 8.14.24) - 32x32 pixel_14: 1430585883
+      Tile Map (updates 8.14.24) - 32x32 pixel_15: -1266675731
+      Tile Map (updates 8.14.24) - 32x32 pixel_16: -977869722
+      Tile Map (updates 8.14.24) - 32x32 pixel_17: -1035675864
+      Tile Map (updates 8.14.24) - 32x32 pixel_18: 442788815
+      Tile Map (updates 8.14.24) - 32x32 pixel_19: 318527830
+      Tile Map (updates 8.14.24) - 32x32 pixel_2: -2069702420
+      Tile Map (updates 8.14.24) - 32x32 pixel_20: 1140046992
+      Tile Map (updates 8.14.24) - 32x32 pixel_21: 213944230
+      Tile Map (updates 8.14.24) - 32x32 pixel_22: -1618019020
+      Tile Map (updates 8.14.24) - 32x32 pixel_23: -918564104
+      Tile Map (updates 8.14.24) - 32x32 pixel_24: 1219562131
+      Tile Map (updates 8.14.24) - 32x32 pixel_3: -1683732175
+      Tile Map (updates 8.14.24) - 32x32 pixel_4: 1010319189
+      Tile Map (updates 8.14.24) - 32x32 pixel_5: -1902090925
+      Tile Map (updates 8.14.24) - 32x32 pixel_6: -1511282541
+      Tile Map (updates 8.14.24) - 32x32 pixel_7: 1403900116
+      Tile Map (updates 8.14.24) - 32x32 pixel_8: 411164528
+      Tile Map (updates 8.14.24) - 32x32 pixel_9: -2013654461
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
