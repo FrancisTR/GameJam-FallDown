@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2558514475460196503}
   - component: {fileID: 548248937041582303}
   - component: {fileID: 5380909110633309905}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Static Sprite (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6743841922347371260}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.538, y: 0.46000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

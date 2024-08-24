@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - BossRoom
+  - Skeleton
+  - SkeletonLeft
+  - SkeletonRight
+  - MinecartDestroyer
+  - Minecart
+  - Ground
+  - Enemy
+  - Hazards
+  - Goo
   layers:
   - Default
   - TransparentFX
@@ -12,17 +21,17 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - Ground
-  - Player
-  - Background
   - Enemy
+  - Player
+  - GooDrop
+  - Ground
+  - Background
+  - GooSpawner
   - FallingPlatform
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Minecart
+  - MinecartDestroyer
+  - BossInitiator
+  - Decor
   - 
   - 
   - 
