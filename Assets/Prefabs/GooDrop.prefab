@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlimeSpawner: {fileID: 1811320771708720989, guid: 9f78ee05b3308484ab4549194b2db43f, type: 3}
-  spawnLocation: 0.5
-  chanceToSpawn: 0.1
+  spawnLocation: 0.4
+  chanceToSpawn: 0.05
 --- !u!70 &-1558399975556198157
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
