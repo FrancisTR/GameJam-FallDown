@@ -10,7 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3197086591733611130}
   - component: {fileID: 3720944902782410421}
+<<<<<<< HEAD
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   m_Name: ArrowShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,10 +61,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3486352018982679667}
   - component: {fileID: 1508567506836064819}
+<<<<<<< HEAD
   - component: {fileID: 5729466988688802770}
   - component: {fileID: 2202297573933312269}
   - component: {fileID: 5141550585975829617}
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   m_Name: EnemySkeletonLeft
   m_TagString: SkeletonLeft
   m_Icon: {fileID: 0}
@@ -77,7 +85,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.91, y: -1.38, z: -0.04424298}
+<<<<<<< HEAD
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
+=======
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3197086591733611130}
@@ -135,6 +147,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!50 &5729466988688802770
 Rigidbody2D:
   serializedVersion: 4
@@ -219,3 +232,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3b51b9674b4494cbc6ab461e508c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f

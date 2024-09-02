@@ -13,7 +13,10 @@ TagManager:
   - Ground
   - Enemy
   - Hazards
+<<<<<<< HEAD
   - Goo
+=======
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   layers:
   - Default
   - TransparentFX
@@ -30,8 +33,13 @@ TagManager:
   - FallingPlatform
   - Minecart
   - MinecartDestroyer
+<<<<<<< HEAD
   - BossInitiator
   - Decor
+=======
+  - 
+  - 
+>>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   - 
   - 
   - 
