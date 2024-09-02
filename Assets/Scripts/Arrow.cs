@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-<<<<<<< HEAD
     [SerializeField] private float arrowSpeed = 20f;
     [SerializeField] private float timeToDestroy = 2f;
 
@@ -49,48 +48,4 @@ public class Arrow : MonoBehaviour
         yield return new WaitForSeconds(timeToDestroy);
         Destroy(gameObject);
     }
-=======
-    [SerializeField] private float ArrowSpeed = 20f;
-    Rigidbody2D myRigidbody;
-    GameObject skeletonLeft;
-    GameObject skeletonRight;
-    void Start()
-    {
-        myRigidbody = GetComponent<Rigidbody2D>();
-        skeletonLeft = GameObject.FindWithTag("SkeletonLeft");
-        skeletonRight = GameObject.FindWithTag("SkeletonRight");
-        if(skeletonLeft)
-        {
-            ShootLeft();
-            return;
-        }
-        else if(skeletonRight)
-        {
-            ShootRight();
-            return;
-        }
-        else
-        {
-            return;
-        }
-    }
-
-    private void ShootLeft()
-    {
-        transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        myRigidbody.velocity = new Vector2(-ArrowSpeed, 0f);
-
-    } 
-    private void ShootRight()
-    {
-        myRigidbody.velocity = new Vector2(ArrowSpeed, 0f);
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Destroy(gameObject);   
-    }
-
-    
-
->>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
 }

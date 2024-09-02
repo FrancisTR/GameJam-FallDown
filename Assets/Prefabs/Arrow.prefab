@@ -12,17 +12,10 @@ GameObject:
   - component: {fileID: 9077070264426430005}
   - component: {fileID: 5694753005315087688}
   - component: {fileID: 1259408173201719619}
-<<<<<<< HEAD
   - component: {fileID: 2730609584997444323}
   m_Layer: 6
   m_Name: Arrow
   m_TagString: Enemy
-=======
-  - component: {fileID: 7458702719155944895}
-  m_Layer: 0
-  m_Name: Arrow
-  m_TagString: Untagged
->>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,11 +149,7 @@ CapsuleCollider2D:
   m_Offset: {x: 4.47, y: 0}
   m_Size: {x: 2.42, y: 1.21}
   m_Direction: 0
-<<<<<<< HEAD
 --- !u!114 &2730609584997444323
-=======
---- !u!114 &7458702719155944895
->>>>>>> 4d82d57c79266825a29ace6de564538355aa052f
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,9 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246803c7ebcd6b0419f70f761e88786c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   arrowSpeed: 20
   timeToDestroy: 2
-=======
-  ArrowSpeed: 3.86
->>>>>>> 4d82d57c79266825a29ace6de564538355aa052f

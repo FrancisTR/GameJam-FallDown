@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6614326484657715290}
   m_Layer: 13
   m_Name: MinecartBoss
-  m_TagString: Minecart
+  m_TagString: MinecartBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9e3a1a3b2e5d34db81fd8cf68c1435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   secondsToDestroy: 5

@@ -26,7 +26,7 @@ public class BossController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Minecart"))
+        if (other.CompareTag("MinecartBoss"))
         {
             transform.position = targetPosition[Lives - 1].position;
             StartCoroutine(Damaged());
