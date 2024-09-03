@@ -13,6 +13,9 @@ TagManager:
   - Ground
   - Enemy
   - Hazards
+  - Goo
+  - Boss
+  - MinecartBoss
   layers:
   - Default
   - TransparentFX
@@ -29,10 +32,10 @@ TagManager:
   - FallingPlatform
   - Minecart
   - MinecartDestroyer
-  - 
-  - 
-  - 
-  - 
+  - BossInitiator
+  - arrow
+  - Boss
+  - MinecartBoss
   - 
   - 
   - 
