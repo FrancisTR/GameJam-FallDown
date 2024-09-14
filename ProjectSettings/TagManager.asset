@@ -16,6 +16,7 @@ TagManager:
   - Goo
   - Boss
   - MinecartBoss
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX

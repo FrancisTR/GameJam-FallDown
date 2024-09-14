@@ -20,7 +20,7 @@ public class FallingPlatform : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("touched");
-            StartCoroutine(Fall());
+            // StartCoroutine(Fall()); //Use this when adding transitions, for ow instant
         }
     }
     // Start is called before the first frame update
