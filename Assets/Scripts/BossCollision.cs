@@ -27,7 +27,7 @@ public class BossCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (myCollider != null && other.CompareTag("Player") && myCollider.enabled)
+        if (myCollider != null && other.CompareTag("Player") || other.CompareTag("Enemy")  && myCollider.enabled)
         {
             bossController.StartSummon();
             Spawn();
@@ -56,6 +56,7 @@ public class BossCollision : MonoBehaviour
     }
     public void SpawnMinecartBoss()
     {
+        
         foreach (Transform spawnPoint in MinecartBossSpawnPoint)
         {
             Instantiate(MinecartBossSpawner, spawnPoint.position, spawnPoint.rotation);
@@ -77,20 +78,5 @@ public class BossCollision : MonoBehaviour
                 Destroy(skeleton);
             }
         }
-
-        /*GameObject leftSkeletons = GameObject.FindGameObjectsWithTag("SkeletonLeft");
-        //GameObject rightSkeletons = GameObject.FindGameObjectsWithTag("SkeletonRight");
-
-
-        foreach (GameObject skeleton in leftSkeletons)
-        {
-            Destroy(skeleton);
-        }
-
-
-        foreach (GameObject skeleton in rightSkeletons)
-        {
-            Destroy(skeleton);
-        }*/
     }
 }
