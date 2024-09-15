@@ -16,7 +16,7 @@ public class BossController : MonoBehaviour
     [SerializeField] public bool bossIsHit = false;
 
     [SerializeField] public bool isMinecart;
-    
+
 
 
     // Start is called before the first frame update
@@ -27,10 +27,10 @@ public class BossController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        
+
 
         //BossCollision myBossCollision = bossCollision.GetComponent<BossCollision>();
-        
+
     }
     private void Update() 
     {
@@ -45,14 +45,14 @@ public class BossController : MonoBehaviour
         Debug.Log("Hello");
         Debug.Log(bossIsHit);
         Debug.Log(isMinecart);
-        GameObject[] Minecarts = GameObject.FindGameObjectsWithTag("MinecartBoss");
-        if(Minecarts.Length == 0)
-        {
-            isMinecart = false;
-        }
-        else if (Minecarts.Length > 0){
-            isMinecart = true;
-        }
+        // GameObject[] Minecarts = GameObject.FindGameObjectsWithTag("MinecartBoss");
+        // if(Minecarts.Length <= 0)
+        // {
+        //     isMinecart = false;
+        // }
+        // else if (Minecarts.Length > 0){
+        //     isMinecart = true;
+        // }
         if(!(bossIsHit && isMinecart))
         {
         Debug.Log("Hello NO HIT?");
@@ -62,13 +62,13 @@ public class BossController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-    
+
         if(other.CompareTag("MinecartBoss"))
         {
             bossIsHit = true;
         }
-        
-        
+
+
             if(bossIsHit)
             {
                 TeleportBoss();
@@ -78,8 +78,8 @@ public class BossController : MonoBehaviour
                 myBossCollision.Spawn();
                 StartCoroutine(myBossCollision.SkeletonTimer());
             }
-            
-        
+
+
     }
     public void MinecartExist()
     {
@@ -105,7 +105,7 @@ public class BossController : MonoBehaviour
     }
 
 
-    
+
     public void StartSummon()
     {
         myAnimator.SetBool("isSummoning", true);

@@ -33,6 +33,7 @@ public class MinecartCollisionBoss : MonoBehaviour
        yield return new WaitForSeconds(secondsToDestroy);
         Destroy(gameObject);
         bossController = FindObjectOfType<BossController>();
+        bossController.isMinecart = false;
         bossController.MissedHitOnBoss();
 
     }
