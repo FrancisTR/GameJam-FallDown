@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 8f;
         }
-        if(collision.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("MinecartBoss"))
         {
             StartCoroutine(Damaged());
             Destroy(collision.gameObject);
