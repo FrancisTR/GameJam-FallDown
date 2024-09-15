@@ -6,6 +6,12 @@ using Cinemachine;
 
 public class DoorTransition : MonoBehaviour
 {
+    /*
+    For this class to function you need:
+        - A box collider
+            - set it to is trigger
+        - Have a camera
+    */
     [SerializeField] private DoorTransition targetDoor;
     [SerializeField] private Collider2D targetArea;
     [SerializeField] private CinemachineConfiner targetCamera;
@@ -22,9 +28,8 @@ public class DoorTransition : MonoBehaviour
     }
     void Update()
     {
-        if (buttonAction.triggered && playerInRange)
+        if (playerInRange && buttonAction.triggered)
         {
-            Debug.Log("nnnnnn");
             enterDoor();
         }
     }
@@ -40,8 +45,7 @@ public class DoorTransition : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            Debug.Log("touched");
-            // enterDoor(collider.gameObject);
+            Debug.Log("In Range of "+this+" Door");
             player = collider.gameObject;
             playerInRange = true;
         }

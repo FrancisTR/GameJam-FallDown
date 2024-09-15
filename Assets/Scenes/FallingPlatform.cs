@@ -14,13 +14,14 @@ public class FallingPlatform : MonoBehaviour
     void Start()
     {
         myBoxCollider = GetComponent<BoxCollider2D>();
+        Debug.Log(myBoxCollider);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("touched");
-            // StartCoroutine(Fall()); //Use this when adding transitions, for ow instant
+            StartCoroutine(Fall());
         }
     }
     // Start is called before the first frame update
