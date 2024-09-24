@@ -6,6 +6,7 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     public BossCollision myBossCollision;
+    public MinecartCollisionBoss myMinecartBoss;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     //[SerializeField] Vector3 targetPosition;
@@ -16,6 +17,10 @@ public class BossController : MonoBehaviour
     [SerializeField] public bool bossIsHit = false;
 
     [SerializeField] public bool isMinecart;
+
+    [SerializeField] public bool isSkeleton;
+
+
 
 
 
@@ -28,13 +33,27 @@ public class BossController : MonoBehaviour
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
+        myMinecartBoss = FindObjectOfType<MinecartCollisionBoss>();
+
 
         //BossCollision myBossCollision = bossCollision.GetComponent<BossCollision>();
 
     }
-    private void Update() 
+    private void FixedUpdate()
     {
-        // MinecartExist();
+
+        GameObject[] Minecarts = GameObject.FindGameObjectsWithTag("MinecartBoss");
+        Debug.Log("num mines "+ Minecarts.Length.ToString());
+        GameObject[] Skeletons = GameObject.FindGameObjectsWithTag("Skeleton");
+        Debug.Log("num skeletons " +  Skeletons.Length.ToString());
+
+        if (Skeletons.Length == 0 && Minecarts.Length == 0)
+        {
+            MissedHitOnBoss();
+        }
+
+
+
     }
     public void BossHitCheck(){
         Debug.Log("BossHIt");
@@ -45,15 +64,8 @@ public class BossController : MonoBehaviour
         Debug.Log("Hello");
         Debug.Log(bossIsHit);
         Debug.Log(isMinecart);
-        // GameObject[] Minecarts = GameObject.FindGameObjectsWithTag("MinecartBoss");
-        // if(Minecarts.Length <= 0)
-        // {
-        //     isMinecart = false;
-        // }
-        // else if (Minecarts.Length > 0){
-        //     isMinecart = true;
-        // }
-        if(!(bossIsHit && isMinecart))
+ 
+        if(bossIsHit == false && isMinecart == false)
         {
         Debug.Log("Hello NO HIT?");
             myBossCollision.Spawn();
@@ -77,6 +89,7 @@ public class BossController : MonoBehaviour
                 Debug.Log(Lives);
                 myBossCollision.Spawn();
                 StartCoroutine(myBossCollision.SkeletonTimer());
+                BossHitCheck();
             }
 
 
@@ -87,9 +100,22 @@ public class BossController : MonoBehaviour
         if(Minecarts.Length == 0)
         {
             isMinecart = false;
+            MissedHitOnBoss();
         }
-        else{
+        else if(Minecarts.Length > 0){
             isMinecart = true;
+        }
+    }
+    public void SkeletonBossExist()
+    {
+        GameObject[] Skeletons = GameObject.FindGameObjectsWithTag("Skeleton");
+        if (Skeletons.Length == 0)
+        {
+            isSkeleton = false;
+        }
+        else if(Skeletons.Length > 0)
+        {
+            isSkeleton = true;
         }
     }
     private void TeleportBoss()

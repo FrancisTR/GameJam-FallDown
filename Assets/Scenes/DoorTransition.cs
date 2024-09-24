@@ -28,10 +28,12 @@ public class DoorTransition : MonoBehaviour
     }
     void Update()
     {
-        if (playerInRange && buttonAction.triggered)
-        {
-            enterDoor();
+        //if (playerInRange && buttonAction.triggered)
+        //{
+        if (playerInRange && Input.GetKeyDown("w")) { 
+            EnterDoor();
         }
+        //}
     }
     private void Awake()
     {
@@ -69,7 +71,7 @@ public class DoorTransition : MonoBehaviour
         buttonAction.Disable();
     }
 
-    private void enterDoor()
+    private void EnterDoor()
     {
         if(!player || !targetDoor)
         {
