@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - MinecartBoss
   - VirtualCamera
+  - SkeletonBoss
   layers:
   - Default
   - TransparentFX

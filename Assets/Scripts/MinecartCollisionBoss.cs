@@ -26,15 +26,16 @@ public class MinecartCollisionBoss : MonoBehaviour
     {
         myRigidbody.velocity = new Vector2(moveSpeed, 0f);
         StartCoroutine(DestroyMinecart());
+     
     }
     public IEnumerator DestroyMinecart()
     {
-
-       yield return new WaitForSeconds(secondsToDestroy);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(secondsToDestroy);
         bossController = FindObjectOfType<BossController>();
         bossController.isMinecart = false;
         bossController.MissedHitOnBoss();
+        Destroy(gameObject);
+        
 
     }
 
