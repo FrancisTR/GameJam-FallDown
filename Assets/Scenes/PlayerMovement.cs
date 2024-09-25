@@ -2,31 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 18f;
+    [SerializeField] private float speed = 8f;
+    [SerializeField] private float jumpingPower = 18f;
     private bool isFacingRight = true;
     [SerializeField] int Lives = 3;
     Animator myAnimator;
     SpriteRenderer m_SpriteRenderer;
     BoxCollider2D  myBoxCollider;
-
-
-
-
+    [SerializeField] Tilemap tilemap;
+    [SerializeField] GameObject player;
+    [SerializeField] bool inGoo;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private float attackRange = 1f; // The range of the melee attack
+    [SerializeField] private int attackDamage = 10; // The damage dealt by the attack
+    [SerializeField] private Transform attackPoint; // The point from where the attack originates
+    [SerializeField] private LayerMask enemyLayers; // The layers considered as enemies
     // Start is called before the first frame update
     void Start()
      {
         myAnimator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         myBoxCollider = GetComponent<BoxCollider2D>();
+        // Tilemap tilemap = GetComponent<Tilemap>();
      }
 
     // Update is called once per frame
@@ -34,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded()){
+        if (Input.GetButtonDown("Jump") && IsGrounded() && inGoo == false){
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
@@ -49,21 +54,24 @@ public class PlayerMovement : MonoBehaviour
         {
             myAnimator.SetBool("isJumping",false);
         }
+        if(Input.GetKeyDown("s"))
+            {
+                Debug.Log("Destroying goo");
+                DestroyGooTile(groundCheck.transform.position);
+            }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
 
+            myAnimator.SetTrigger("isHitting");
+            PerformMeleeAttack();
+        }
 
         Flip();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Goo"))
-        {
-            speed = 2f;
-        }
-        else
-        {
-            speed = 8f;
-        }
+        
         if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("MinecartBoss"))
         {
             StartCoroutine(Damaged());
@@ -75,8 +83,31 @@ public class PlayerMovement : MonoBehaviour
             Lives = 0;
             HealthCheck();
         }
-
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag("Goo"))
+        {
+            inGoo = true;
+            speed = 2f;
+        }
+        else
+        {
+            speed = 8f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        inGoo = false;
+        speed = 8f;
+    }
+     private void DestroyGooTile(Vector3 worldPosition)
+        {
+            Vector3Int gooTilePosition = tilemap.WorldToCell(worldPosition);
+            
+            tilemap.SetTile(gooTilePosition, null);
+
+            Debug.Log("Tile destroyed at: " + gooTilePosition);
+        }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -122,6 +153,30 @@ public class PlayerMovement : MonoBehaviour
         Lives--;
         yield return new WaitForSeconds(.1f);
         m_SpriteRenderer.color =  Color.white;
+    }
+
+// Method to perform the melee attack
+    private void PerformMeleeAttack()
+    {
+        // Detect all enemies in the attack range using Physics2D.OverlapCircleAll
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Loop through all hit enemies and apply damage
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("Hit " + enemy.name);
+            //enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+    }
+
+    // Visualize the attack range in the Unity editor
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
 }
