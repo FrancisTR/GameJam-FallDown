@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI; 
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public TextMeshProUGUI livesLabel;
     private float horizontal;
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpingPower = 18f;
@@ -31,6 +34,19 @@ public class PlayerMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         myBoxCollider = GetComponent<BoxCollider2D>();
+        if (!livesLabel)
+        {
+            GameObject labelObject = GameObject.Find("StaticCanvas/LivesTextTMP");
+            if (labelObject)
+            {
+                livesLabel = labelObject.GetComponent<TextMeshProUGUI>();
+                livesLabel.text = "Lives: " + Lives.ToString();
+            }
+            else
+            {
+                Debug.LogError("LivesLabel GameObject not found!");
+            }
+        }
         // Tilemap tilemap = GetComponent<Tilemap>();
      }
 
@@ -131,12 +147,16 @@ public class PlayerMovement : MonoBehaviour
     void HealthCheck() 
     {
         Debug.Log("checking");
-            if(Lives <= 0)
-            {
-                myAnimator.SetBool("isDying", true);
-                StartCoroutine(DeathAnimation());
-                
-            }
+        if(Lives <= 0)
+        {
+            myAnimator.SetBool("isDying", true);
+            livesLabel.text = "You've died!";
+            StartCoroutine(DeathAnimation());
+        }
+        else
+        {
+            livesLabel.text = "Lives: " + Lives.ToString();
+        }
     }
     IEnumerator  DeathAnimation()
     {
