@@ -14,7 +14,7 @@ public class FallingPlatform : MonoBehaviour
     void Start()
     {
         myBoxCollider = GetComponent<BoxCollider2D>();
-        Debug.Log(myBoxCollider);
+        // Debug.Log(myBoxCollider);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
