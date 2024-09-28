@@ -15,6 +15,7 @@ public class DoorTransition : MonoBehaviour
     [SerializeField] private DoorTransition targetDoor;
     [SerializeField] private Collider2D targetArea;
     [SerializeField] private CinemachineConfiner targetCamera;
+    [SerializeField] private GameObject MessageIcon;
     private BoxCollider2D myBoxCollider;
     private Controls input = null;
     private InputAction buttonAction;
@@ -50,6 +51,7 @@ public class DoorTransition : MonoBehaviour
             Debug.Log("In Range of "+this+" Door");
             player = collider.gameObject;
             playerInRange = true;
+            showMessage(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
@@ -58,6 +60,7 @@ public class DoorTransition : MonoBehaviour
         {
             playerInRange = false;
             player = null;
+            showMessage(false);
         }
     }
      private void OnEnable()
@@ -69,6 +72,12 @@ public class DoorTransition : MonoBehaviour
     {
         // Disable the input action
         buttonAction.Disable();
+    }
+
+    private void showMessage(bool b){
+        if(MessageIcon && targetDoor){
+            MessageIcon.gameObject.SetActive(b);
+        }
     }
 
     private void EnterDoor()

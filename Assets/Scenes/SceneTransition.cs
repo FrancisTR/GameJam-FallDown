@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     public void LoadSceneByName()
     {
-        SceneManager.LoadScene("Scenes/Level1");
+        SceneManager.LoadScene("Scenes/Tutorial_Level");
     }
 
     public void LoadNextInBuild()

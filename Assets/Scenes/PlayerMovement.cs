@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpingPower = 18f;
     private bool isFacingRight = true;
-    [SerializeField] int Lives = 3;
+    [SerializeField] int Lives;
     Animator myAnimator;
     SpriteRenderer m_SpriteRenderer;
     BoxCollider2D  myBoxCollider;
@@ -165,6 +165,15 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider.enabled = false;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // TutorialScript tutorialScript = FindObjectOfType<TutorialScript>();
+        // if (tutorialScript)
+        // {
+        //     tutorialScript.test();  // Call test method
+        // }
+        // else
+        // {
+        //     Debug.LogError("TutorialScript instance not found!");
+        // }
     }
 
     IEnumerator Damaged()
