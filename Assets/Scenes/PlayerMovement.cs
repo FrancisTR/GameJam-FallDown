@@ -28,7 +28,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int attackDamage = 10; // The damage dealt by the attack
     [SerializeField] private Transform attackPoint; // The point from where the attack originates
     [SerializeField] private LayerMask enemyLayers; // The layers considered as enemies
-    // Start is called before the first frame update
+    [SerializeField] AudioClip runningSound;
+    [SerializeField] AudioClip hitSound;
+    [SerializeField] float footSteps;
+
+    private bool isGrounded;
+    private bool isRunning;
+    private AudioSource audioSource;
+
     void Start()
      {
         myAnimator = GetComponent<Animator>();
@@ -48,36 +55,40 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         // Tilemap tilemap = GetComponent<Tilemap>();
+        audioSource = GetComponent<AudioSource>();
      }
 
-    // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded() && inGoo == false){
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !inGoo)
+        {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
-        if(rb.velocity.y != 0 && !IsGrounded())
+
+        if (rb.velocity.y != 0 && !IsGrounded())
         {
-            myAnimator.SetBool("isJumping",true);
+            myAnimator.SetBool("isJumping", true);
         }
         else
         {
-            myAnimator.SetBool("isJumping",false);
+            myAnimator.SetBool("isJumping", false);
         }
-        if(Input.GetKeyDown("s"))
-            {
-                Debug.Log("Destroying goo");
-                DestroyGooTile(groundCheck.transform.position);
-            }
+
+        if (Input.GetKeyDown("s"))
+        {
+            Debug.Log("Destroying goo");
+            DestroyGooTile(groundCheck.position);
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-
             myAnimator.SetTrigger("isHitting");
             PerformMeleeAttack();
         }
@@ -85,23 +96,88 @@ public class PlayerMovement : MonoBehaviour
         Flip();
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        // Check if the player is grounded
+        isGrounded = IsGrounded();
+
+        bool playerHasMovementSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        if (isGrounded && playerHasMovementSpeed)
+        {
+            if (!isRunning) 
+            {
+                RunSound(runningSound);
+                audioSource.loop = true;
+                isRunning = true;
+            }
+        }
+        else
+        {
+            isRunning = false; 
+            audioSource.loop = false;
+            audioSource.Stop();
+        }
+
+        myAnimator.SetBool("isWalking", playerHasMovementSpeed);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    private void RunSound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null) 
+        {
+           audioSource.clip = clip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioClip or AudioSource is null! Please assign the AudioClip.");
+        }
+    }
+
+    private void DestroyGooTile(Vector3 worldPosition)
+    {
+        Vector3Int gooTilePosition = tilemap.WorldToCell(worldPosition);
+        tilemap.SetTile(gooTilePosition, null);
+        Debug.Log("Tile destroyed at: " + gooTilePosition);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("MinecartBoss"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("MinecartBoss"))
         {
             StartCoroutine(Damaged());
             Destroy(collision.gameObject);
             HealthCheck();
         }
-        if(collision.gameObject.CompareTag("Hazards"))
+
+        if (collision.gameObject.CompareTag("Hazards"))
         {
             Lives = 0;
             HealthCheck();
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Goo"))
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Goo"))
         {
             inGoo = true;
             speed = 2f;
@@ -111,53 +187,28 @@ public class PlayerMovement : MonoBehaviour
             speed = 8f;
         }
     }
-    private void OnTriggerExit2D(Collider2D other) 
+
+    private void OnTriggerExit2D(Collider2D other)
     {
         inGoo = false;
         speed = 8f;
     }
-     private void DestroyGooTile(Vector3 worldPosition)
-        {
-            Vector3Int gooTilePosition = tilemap.WorldToCell(worldPosition);
-            
-            tilemap.SetTile(gooTilePosition, null);
 
-            Debug.Log("Tile destroyed at: " + gooTilePosition);
-        }
-    private void FixedUpdate()
+    void HealthCheck()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        bool playerHasMovementSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        myAnimator.SetBool("isWalking", playerHasMovementSpeed);
-    }
-
-    private bool IsGrounded(){
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    private void Flip(){
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f ){
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
-    }
-
-    void HealthCheck() 
-    {
-        Debug.Log("checking");
-        if(Lives <= 0)
+        if (Lives <= 0)
         {
             myAnimator.SetBool("isDying", true);
             livesLabel.text = "You've died!";
             StartCoroutine(DeathAnimation());
-        }
+        } 
         else
         {
             livesLabel.text = "Lives: " + Lives.ToString();
         }
     }
+
+    
     IEnumerator  DeathAnimation()
     {
         Debug.Log("dead");
@@ -165,15 +216,6 @@ public class PlayerMovement : MonoBehaviour
         myBoxCollider.enabled = false;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // TutorialScript tutorialScript = FindObjectOfType<TutorialScript>();
-        // if (tutorialScript)
-        // {
-        //     tutorialScript.test();  // Call test method
-        // }
-        // else
-        // {
-        //     Debug.LogError("TutorialScript instance not found!");
-        // }
     }
 
     IEnumerator Damaged()
@@ -181,24 +223,18 @@ public class PlayerMovement : MonoBehaviour
         m_SpriteRenderer.color = Color.red;
         Lives--;
         yield return new WaitForSeconds(.1f);
-        m_SpriteRenderer.color =  Color.white;
+        m_SpriteRenderer.color = Color.white;
     }
 
-// Method to perform the melee attack
     private void PerformMeleeAttack()
     {
-        // Detect all enemies in the attack range using Physics2D.OverlapCircleAll
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        // Loop through all hit enemies and apply damage
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Hit " + enemy.name);
-            //enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
 
-    // Visualize the attack range in the Unity editor
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -207,5 +243,4 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
 }
