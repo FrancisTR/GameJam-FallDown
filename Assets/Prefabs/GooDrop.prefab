@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 600b4088483a46e4e9b5c4a3d595230f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 515186ccea9c29f4e9494c9989cec581, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlimeSpawner: {fileID: 1811320771708720989, guid: 9f78ee05b3308484ab4549194b2db43f, type: 3}
-  spawnLocation: 0.4
+  spawnLocation: -0.15
   chanceToSpawn: 0.05
 --- !u!70 &-1558399975556198157
 CapsuleCollider2D:
