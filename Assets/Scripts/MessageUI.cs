@@ -5,6 +5,7 @@ using UnityEngine;
 public class MessageUI : MonoBehaviour
 {
     [SerializeField] private MessageUI nextMessage;
+    public bool triggeredFinish = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class MessageUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return)) {
             if(nextMessage){
                 nextMessage.gameObject.SetActive(true);
+            }else{
+                triggeredFinish = true;
             }
             this.gameObject.SetActive(false);
         }
