@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpingPower = 18f;
     private bool isFacingRight = true;
+    public bool restrictMovement = false;
     [SerializeField] int Lives;
     Animator myAnimator;
     SpriteRenderer m_SpriteRenderer;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip runningSound;
     [SerializeField] AudioClip hitSound;
     [SerializeField] float footSteps;
+    [SerializeField] bool inTutorial = false;
 
     private bool isGrounded;
     private bool isRunning;
@@ -62,12 +64,12 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded() && !inGoo)
+        if (!restrictMovement && Input.GetButtonDown("Jump") && IsGrounded() && !inGoo)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (!restrictMovement && Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -92,14 +94,14 @@ public class PlayerMovement : MonoBehaviour
             myAnimator.SetTrigger("isHitting");
             PerformMeleeAttack();
         }
-
         Flip();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-
+        if(!restrictMovement){
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
         // Check if the player is grounded
         isGrounded = IsGrounded();
 

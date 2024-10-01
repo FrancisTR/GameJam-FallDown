@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 82.23, y: -1.69, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5838661636356533584}
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 1.21}
+    oldSize: {x: 3.75, y: 3.78125}
     newSize: {x: 1.2, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -155,12 +155,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 8962728793740798742}
     m_Modifications:
     - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.71
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -194,13 +206,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4570049267189855188, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6420870196267276940, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_Name
       value: Message Icon
       objectReference: {fileID: 0}
     - target: {fileID: 6420870196267276940, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6476258435204913330, guid: 1f9426d98efcfd140abb2bc6cafbd0f0, type: 3}
       propertyPath: m_IsActive
