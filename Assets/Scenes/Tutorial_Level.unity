@@ -306,6 +306,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5821304580281031167, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
+      propertyPath: forceSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821304580281031167, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
       propertyPath: targetArea
       value: 
       objectReference: {fileID: 0}
@@ -383,6 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adventurer Reply 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -449,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -540,7 +548,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec092012246f24b409e8a09f72c332d3, type: 2}
+  - {fileID: 2100000, guid: ef2d27c1bf23c064da8d209883626ae1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37939,6 +37947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adventurer Reply 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -38005,7 +38017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38048,6 +38060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -38114,7 +38130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38247,6 +38263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Adventurer Reply 11
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -38313,7 +38333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38590,8 +38610,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -19, y: -22, z: 0}
-  m_Size: {x: 149, y: 24, z: 1}
+  m_Origin: {x: -20, y: -22, z: 0}
+  m_Size: {x: 150, y: 24, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -38790,6 +38810,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5821304580281031167, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
+      propertyPath: nextScene
+      value: Scenes/Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 7028484742109329176, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -38922,6 +38946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -38988,7 +39016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39426,10 +39454,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1073813172}
     m_Modifications:
-    - target: {fileID: 1575836269787964540, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
-      propertyPath: m_Text
-      value: Welcome back Great Adventurer!
-      objectReference: {fileID: 0}
     - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Name
       value: King Dialogue 1
@@ -39448,7 +39472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0.57000005
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchorMin.x
@@ -39464,7 +39488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 93
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39496,11 +39520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.22397
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39513,10 +39537,6 @@ PrefabInstance:
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8085900906383369270, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
-      propertyPath: m_Text
-      value: King
       objectReference: {fileID: 0}
     - target: {fileID: 8495024557142617954, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: nextMessage
@@ -39543,6 +39563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -39609,7 +39633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39743,6 +39767,10 @@ PrefabInstance:
     - target: {fileID: 5450880118958038886, guid: a60f2bcd73698a06e9a8f0256f67543e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176197121381345264, guid: a60f2bcd73698a06e9a8f0256f67543e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7634118426781551004, guid: a60f2bcd73698a06e9a8f0256f67543e, type: 3}
       propertyPath: m_LocalScale.x
@@ -39991,6 +40019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -40057,7 +40089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44207,6 +44239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -44273,7 +44309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57758,11 +57794,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1575836269787964540, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Text
-      value: What I need is someone who knows there way around the dungeon.
+      value: What I need is someone who knows their way around the dungeon.
       objectReference: {fileID: 0}
     - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Name
       value: King Dialogue 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
@@ -57830,7 +57870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57873,6 +57913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King Dialogue 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -57939,7 +57983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -58073,11 +58117,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2833417993910525877, guid: 60426353461261d4cb6ca85a01f3441f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.08
+      value: -16.259
       objectReference: {fileID: 0}
     - target: {fileID: 2833417993910525877, guid: 60426353461261d4cb6ca85a01f3441f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: -0.327
       objectReference: {fileID: 0}
     - target: {fileID: 2833417993910525877, guid: 60426353461261d4cb6ca85a01f3441f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58115,6 +58159,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 53918814}
+    - target: {fileID: 7172240369344478710, guid: 60426353461261d4cb6ca85a01f3441f, type: 3}
+      propertyPath: inTutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9014737829710598646, guid: 60426353461261d4cb6ca85a01f3441f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -58139,6 +58187,10 @@ PrefabInstance:
     - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Name
       value: SignUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2552531648630962580, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_Pivot.x
@@ -58206,7 +58258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 5693458482982298392, guid: ab5b7374430ff0847984c089ce45e69d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -58255,7 +58307,7 @@ PrefabInstance:
       objectReference: {fileID: 469877359}
     - target: {fileID: 8962728793740798742, guid: d7f52b8690fbadc40b22229d8395732f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.23
+      value: 79.18
       objectReference: {fileID: 0}
     - target: {fileID: 8962728793740798742, guid: d7f52b8690fbadc40b22229d8395732f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -58359,6 +58411,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5821304580281031167, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
+      propertyPath: forceSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821304580281031167, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
       propertyPath: targetArea
       value: 
       objectReference: {fileID: 2074620807}
@@ -58383,6 +58439,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d8fdae53ce9bcd44b1e0ab054a7876d, type: 3}
+--- !u!1001 &6543711775409304511
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 106.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007832956671939248, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035890922143831785, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
+      propertyPath: m_Name
+      value: Check Point
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1ff87521a21f074b89277a359d20efa, type: 3}
 --- !u!1001 &8229572904612902446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58459,3 +58572,4 @@ SceneRoots:
   - {fileID: 1780046652}
   - {fileID: 1709633139}
   - {fileID: 1249565874}
+  - {fileID: 6543711775409304511}

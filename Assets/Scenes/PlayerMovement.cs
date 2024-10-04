@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float footSteps;
     [SerializeField] bool inTutorial = false;
 
+    public GameObject setCheckPoint = null;
+    public bool triggerForceSpawn = false;
     private bool isGrounded;
     private bool isRunning;
     private AudioSource audioSource;
@@ -60,8 +62,10 @@ public class PlayerMovement : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
      }
 
+    // int aaa = 0;
     void Update()
     {
+        // Debug.Log(myAnimator.GetBool("isDying")+ " aaa "+aaa++);
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if (!restrictMovement && Input.GetButtonDown("Jump") && IsGrounded() && !inGoo)
@@ -143,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RunSound(AudioClip clip)
     {
-        if (clip != null && audioSource != null) 
+        if (!restrictMovement && clip != null && audioSource != null) 
         {
            audioSource.clip = clip;
             audioSource.Play();
@@ -200,7 +204,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Lives <= 0)
         {
-            myAnimator.SetBool("isDying", true);
+            if(!myAnimator.GetBool("isDying")){
+                myAnimator.SetBool("isDying", true);
+            }
             livesLabel.text = "You've died!";
             StartCoroutine(DeathAnimation());
         } 
@@ -216,8 +222,31 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("dead");
         rb.bodyType = RigidbodyType2D.Static;
         myBoxCollider.enabled = false;
+        // myAnimator.SetBool("isDying", true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(setCheckPoint)
+        {
+            this.transform.position = setCheckPoint.transform.position;
+            myAnimator.SetBool("isDying", false);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            myBoxCollider.enabled = true;
+            Lives = 3;
+            livesLabel.text = "Lives: " + Lives.ToString();
+        }
+        else if(inTutorial)
+        {
+            myAnimator.SetBool("isDying", false);
+            triggerForceSpawn = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            myBoxCollider.enabled = true;
+            Lives = 3;
+            livesLabel.text = "Lives: " + Lives.ToString();
+        }
+        if(!inTutorial && !setCheckPoint)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     IEnumerator Damaged()
