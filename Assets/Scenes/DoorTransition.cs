@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class DoorTransition : MonoBehaviour
 {
@@ -16,11 +16,13 @@ public class DoorTransition : MonoBehaviour
     [SerializeField] private Collider2D targetArea;
     [SerializeField] private CinemachineConfiner targetCamera;
     [SerializeField] private GameObject MessageIcon;
+    [SerializeField] private string nextScene;
+    [SerializeField] private bool forceSpawn;
     private BoxCollider2D myBoxCollider;
-    private Controls input = null;
-    private InputAction buttonAction;
     private GameObject player;
+    private GameObject savedPlayer;
     private bool playerInRange = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +31,21 @@ public class DoorTransition : MonoBehaviour
     }
     void Update()
     {
-        //if (playerInRange && buttonAction.triggered)
-        //{
         if (playerInRange && Input.GetKeyDown("w")) { 
             EnterDoor();
         }
-        //}
+        if(playerInRange && nextScene != "" && Input.GetKeyDown("w")){
+            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if(forceSpawn && savedPlayer && savedPlayer.GetComponent<PlayerMovement>().triggerForceSpawn){
+            PlayerMovement playerMovement = savedPlayer.GetComponent<PlayerMovement>();
+            playerMovement.triggerForceSpawn = false;
+            savedPlayer.transform.position = this.transform.position;
+        }
     }
     private void Awake()
     {
-        // Initialize the controls
-        input = new Controls();
-        Debug.Log(input.Action.Interaction);
-        buttonAction = input.Action.Interaction;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -50,6 +54,7 @@ public class DoorTransition : MonoBehaviour
         {
             Debug.Log("In Range of "+this+" Door");
             player = collider.gameObject;
+            savedPlayer = collider.gameObject;
             playerInRange = true;
             showMessage(true);
         }
@@ -63,19 +68,9 @@ public class DoorTransition : MonoBehaviour
             showMessage(false);
         }
     }
-     private void OnEnable()
-    {
-        // Enable the input action
-        buttonAction.Enable();
-    }
-    private void OnDisable()
-    {
-        // Disable the input action
-        buttonAction.Disable();
-    }
 
     private void showMessage(bool b){
-        if(MessageIcon && targetDoor){
+        if((MessageIcon && targetDoor)||(MessageIcon && nextScene != "")){
             MessageIcon.gameObject.SetActive(b);
         }
     }
