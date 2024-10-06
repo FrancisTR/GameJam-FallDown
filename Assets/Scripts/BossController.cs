@@ -83,9 +83,9 @@ public class BossController : MonoBehaviour
 
             if(bossIsHit)
             {
-                TeleportBoss();
                 Lives--;
                 StartCoroutine(Damaged());
+                TeleportBoss();
                 Debug.Log(Lives);
                 myBossCollision.Spawn();
                 StartCoroutine(myBossCollision.SkeletonTimer());
@@ -96,6 +96,7 @@ public class BossController : MonoBehaviour
     }
     public void MinecartExist()
     {
+        myAnimator.SetBool("isSummoning", false);
         GameObject[] Minecarts = GameObject.FindGameObjectsWithTag("MinecartBoss");
         if(Minecarts.Length == 0)
         {
@@ -137,6 +138,11 @@ public class BossController : MonoBehaviour
         myAnimator.SetBool("isSummoning", true);
     }
 
+    public void StopSummon()
+    {
+        myAnimator.SetBool("isSummoning", false);
+    }
+
     void HealthCheck()
     {
         Debug.Log("checking");
@@ -152,7 +158,10 @@ public class BossController : MonoBehaviour
     {
         m_SpriteRenderer.color = Color.red;
         Lives--;
-        yield return new WaitForSeconds(.1f);
+        myAnimator.SetBool("isHurt", true);
+        yield return new WaitForSeconds(1f);
         m_SpriteRenderer.color = Color.white;
+        myAnimator.SetBool("isHurt", false);
+
     }
 }

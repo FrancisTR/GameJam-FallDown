@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f; 
+    [SerializeField] public float moveSpeed = 1f; 
     Rigidbody2D myRigidbody;
 
     void Start()
@@ -26,5 +26,20 @@ public class EnemyMovement : MonoBehaviour
     void FlipEnemyFacing()
     {
          transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)) * Mathf.Abs(transform.localScale.x), transform.localScale.y);
+
+    }
+
+    public IEnumerator Stunned()
+    {
+        Debug.Log("ow");
+        Transform childTransform = transform.Find("StunnedSprite");
+        Debug.Log(childTransform);
+        childTransform.gameObject.SetActive(true);
+        myRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        yield return new WaitForSeconds(5f);
+
+        myRigidbody.constraints = RigidbodyConstraints2D.None;
+        childTransform.gameObject.SetActive(false);
     }
 }

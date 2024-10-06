@@ -56,7 +56,9 @@ public class BossCollision : MonoBehaviour
     }
     public void SpawnMinecartBoss()
     {
-        
+        bossController.StopSummon();
+
+
         foreach (Transform spawnPoint in MinecartBossSpawnPoint)
         {
             Instantiate(MinecartBossSpawner, spawnPoint.position, spawnPoint.rotation);
