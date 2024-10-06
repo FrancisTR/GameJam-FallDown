@@ -180,7 +180,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 64b8845e67dc068458ffc145a963bab7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,6 +299,7 @@ MonoBehaviour:
   livesLabel: {fileID: 0}
   speed: 8
   jumpingPower: 18
+  restrictMovement: 0
   Lives: 3
   tilemap: {fileID: 0}
   player: {fileID: 9014737829710598646}
@@ -317,6 +318,9 @@ MonoBehaviour:
   runningSound: {fileID: 8300000, guid: 77f3f87b3695f2e468bce2f7581672ad, type: 3}
   hitSound: {fileID: 8300000, guid: 0560a8cdc2d66a74aa2cea51f7e8c0be, type: 3}
   footSteps: 1
+  inTutorial: 1
+  setCheckPoint: {fileID: 0}
+  triggerForceSpawn: 0
 --- !u!95 &6397095598565165148
 Animator:
   serializedVersion: 5

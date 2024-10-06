@@ -10,11 +10,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public TextMeshProUGUI livesLabel;
     private float horizontal;
+
+    EnemyMovement enemyAttribute;
+
+    [SerializeField] public GameObject lifeCheck;
     [SerializeField] private float speed = 8f;
     [SerializeField] private float jumpingPower = 18f;
     private bool isFacingRight = true;
     public bool restrictMovement = false;
-    [SerializeField] int Lives;
+    [SerializeField] public int Lives;
+    [SerializeField] public int Slimes = 0;
     Animator myAnimator;
     SpriteRenderer m_SpriteRenderer;
     BoxCollider2D  myBoxCollider;
@@ -39,9 +44,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isRunning;
     private AudioSource audioSource;
+    private AudioSource hitSource;
 
     void Start()
      {
+        enemyAttribute = GetComponent<EnemyMovement>();
         myAnimator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         myBoxCollider = GetComponent<BoxCollider2D>();
@@ -60,7 +67,14 @@ public class PlayerMovement : MonoBehaviour
         }
         // Tilemap tilemap = GetComponent<Tilemap>();
         audioSource = GetComponent<AudioSource>();
-     }
+        hitSource = GetComponent<AudioSource>();
+
+
+        if (restrictMovement == false)
+        {
+            lifeCheck.SetActive(true);
+        }
+    }
 
     // int aaa = 0;
     void Update()
@@ -95,10 +109,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            hitSource.clip = hitSound;
+            audioSource.loop = true;
+            hitSource.Play();
+
+            //PlayHitSound(hitSound);
             myAnimator.SetTrigger("isHitting");
             PerformMeleeAttack();
+
         }
         Flip();
+
+        
     }
 
     private void FixedUpdate()
@@ -122,11 +144,24 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isRunning = false; 
-            audioSource.loop = false;
+            //audioSource.loop = false;
             audioSource.Stop();
         }
 
         myAnimator.SetBool("isWalking", playerHasMovementSpeed);
+    }
+
+    public void PlayHitSound(AudioClip hitSound)
+    {
+        if (hitSound != null && audioSource != null)
+        {
+            Debug.Log("yursound");
+            audioSource.PlayOneShot(hitSound); // Play hit sound without interrupting the running sound
+        }
+        else
+        {
+            Debug.LogWarning("Hit sound or AudioSource is null! Please assign the AudioClip.");
+        }
     }
 
     private bool IsGrounded()
@@ -163,6 +198,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3Int gooTilePosition = tilemap.WorldToCell(worldPosition);
         tilemap.SetTile(gooTilePosition, null);
         Debug.Log("Tile destroyed at: " + gooTilePosition);
+
+        if (inGoo)
+        {
+            Debug.Log(Slimes);
+            Slimes++;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -170,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("MinecartBoss"))
         {
             StartCoroutine(Damaged());
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             HealthCheck();
         }
 
@@ -204,15 +245,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Lives <= 0)
         {
-            if(!myAnimator.GetBool("isDying")){
-                myAnimator.SetBool("isDying", true);
-            }
-            livesLabel.text = "You've died!";
+            // if(!myAnimator.GetBool("isDying")){
+            //     myAnimator.SetBool("isDying", true);
+            // }
+            //livesLabel.text = "You've died!";
             StartCoroutine(DeathAnimation());
         } 
         else
         {
-            livesLabel.text = "Lives: " + Lives.ToString();
+            //livesLabel.text = "Lives: " + Lives.ToString();
         }
     }
 
@@ -222,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("dead");
         rb.bodyType = RigidbodyType2D.Static;
         myBoxCollider.enabled = false;
-        // myAnimator.SetBool("isDying", true);
+        myAnimator.SetBool("isDying", true);
         yield return new WaitForSeconds(1f);
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if(setCheckPoint)
@@ -231,8 +272,8 @@ public class PlayerMovement : MonoBehaviour
             myAnimator.SetBool("isDying", false);
             rb.bodyType = RigidbodyType2D.Dynamic;
             myBoxCollider.enabled = true;
-            Lives = 3;
-            livesLabel.text = "Lives: " + Lives.ToString();
+            Lives = 5;
+            //livesLabel.text = "Lives: " + Lives.ToString();
         }
         else if(inTutorial)
         {
@@ -240,11 +281,12 @@ public class PlayerMovement : MonoBehaviour
             triggerForceSpawn = true;
             rb.bodyType = RigidbodyType2D.Dynamic;
             myBoxCollider.enabled = true;
-            Lives = 3;
-            livesLabel.text = "Lives: " + Lives.ToString();
+            Lives = 5;
+            //livesLabel.text = "Lives: " + Lives.ToString();
         }
         if(!inTutorial && !setCheckPoint)
         {
+            Debug.Log("HELLO?");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
@@ -263,6 +305,9 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("Hit " + enemy.name);
+            EnemyMovement enemyAttribute = enemy.GetComponent<EnemyMovement>();
+
+            StartCoroutine(enemyAttribute.Stunned());
         }
     }
 
